@@ -1,6 +1,6 @@
 # Hx0 数据卫士（Hx0 DataGuard）
 
-[![Chrome 应用商店](https://img.shields.io/badge/Chrome%20应用商店-v1.0.2-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)
+[![Chrome 应用商店](https://img.shields.io/badge/Chrome%20应用商店-v1.0.3-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)
 ![Firefox AMO](https://img.shields.io/badge/Firefox%20AMO-审核中-FF7139?style=flat-square&logo=firefoxbrowser&logoColor=white)
 ![形态](https://img.shields.io/badge/形态-浏览器扩展-007AFF?style=flat-square)
 ![计算](https://img.shields.io/badge/计算-本地运行-4CAF50?style=flat-square)
@@ -14,7 +14,7 @@
 
 > 浏览器里的本地安全助手 —— 扫描页面风险、发现可疑路径、实时防输入泄漏，一键导出报告。
 
-**现已上线 [Chrome 应用商店](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)**（当前版本 1.0.2）· Firefox 版已提交审核，不久上线
+**现已上线 [Chrome 应用商店](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)**（当前版本 1.0.3）· Firefox 版已提交审核，不久上线
 
 ## 它是什么
 
@@ -60,6 +60,22 @@ Hx0 数据卫士是由Hx0战队开发的一款运行在浏览器中的**本地**
 **首次安装即享 1 天体验 VIP 会员**，完整解锁全部功能，无需注册账号。
 
 体验期结束后，可在扩展内「设置」中开通正式会员继续使用。开通前请**立即备份您的用户 ID** —— 无注册模式下，它是找回会员权益的唯一凭证。
+
+---
+
+## v1.0.3 更新
+
+相对 1.0.2，本版主要变化如下：
+
+| 模块 | 更新内容 |
+|------|----------|
+| **页面 / JS 扫描** | 命中标注具体来源（主文档、内联脚本、外链 JS、HTML 注释等）；长文件名悬停可看完整路径；复制按钮复制**原始命中值** |
+| **规则中心** | 新增「页面注释」分类（默认开启），专扫 HTML 注释中的凭据、环境变量、TODO/FIXME 等线索 |
+| **API 探测** | 批量 HTTP 探测支持自定义**间隔**、**并发数**与**单条超时**；勾选「携带 Cookie」后请求包可预览 Cookie 头；结果可导出 JSON / Markdown / CSV |
+| **输入防泄漏** | 改进复杂 AI 站点与自定义输入框覆盖；输入停顿时右上角提醒展示**全部命中**；发送时对勾选「是否拦截」的规则居中拦截 |
+| **体验修复** | 修复 Firefox 侧栏报告导出；英文界面下粘贴/脱敏 Toast 跟随语言设置；优化 Chrome 导出时的下载权限申请 |
+
+完整说明见扩展内「设置 → 用户手册」中的 **v1.0.3 更新** 章节。
 
 ---
 
