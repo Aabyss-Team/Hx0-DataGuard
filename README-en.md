@@ -1,6 +1,6 @@
 # Hx0 DataGuard
 
-[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-v1.0.2-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-v1.0.3-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)
 ![Firefox AMO](https://img.shields.io/badge/Firefox%20AMO-In%20Review-FF7139?style=flat-square&logo=firefoxbrowser&logoColor=white)
 ![Form](https://img.shields.io/badge/Form-Browser%20Extension-007AFF?style=flat-square)
 ![Compute](https://img.shields.io/badge/Compute-Local%20First-4CAF50?style=flat-square)
@@ -14,7 +14,7 @@
 
 > Your local security assistant in the browser — scan page risks, discover suspicious paths, guard against input leaks, and export reports in one click.
 
-**Now on the [Chrome Web Store](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)** (v1.0.2) · Firefox add-on submitted for review — coming soon
+**Now on the [Chrome Web Store](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)** (v1.0.3) · Firefox add-on submitted for review — coming soon
 
 ## What It Is
 
@@ -60,6 +60,22 @@ Enterprise DLP is heavy and expensive; manual checking doesn’t scale. Hx0 Data
 **Get a free 1-day VIP trial** on first install — full access to every feature, no account registration required.
 
 After the trial, subscribe from **Settings** in the extension to continue. **Back up your User ID immediately** — in our no-registration model, it is the only credential for recovering your membership.
+
+---
+
+## What’s New in v1.0.3
+
+Highlights since v1.0.2:
+
+| Area | Changes |
+|------|---------|
+| **Page / JS scan** | Hits show exact source (main document, inline script, external JS, HTML comment, etc.); hover long filenames for full paths; copy uses the **raw matched value** |
+| **Rule center** | New **Page comments** category (on by default) scans HTML comments for credentials, env vars, TODO/FIXME markers, and similar clues |
+| **API probing** | Batch HTTP probes support custom **interval**, **concurrency**, and **per-request timeout**; with “Include cookies”, request previews show the Cookie header; export to JSON / Markdown / CSV |
+| **Input leak guard** | Better coverage on complex AI sites and custom inputs; top-right toast lists **all hits** while typing; center block dialog on send for rules marked “Block on hit” |
+| **Fixes** | Firefox side-panel report export; paste/mask toasts follow English UI; smoother Chrome download permission on export |
+
+See **Settings → User manual → v1.0.3 Updates** in the extension for full details.
 
 ---
 
