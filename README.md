@@ -1,31 +1,38 @@
 # Hx0 数据卫士（Hx0 DataGuard）
 
-[![Chrome 应用商店](https://img.shields.io/badge/Chrome%20应用商店-v1.0.6-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)
-![Firefox AMO](https://img.shields.io/badge/Firefox%20AMO-v1.0.3-FF7139?style=flat-square&logo=firefoxbrowser&logoColor=white)
+[![Chrome 应用商店](https://img.shields.io/badge/Chrome%20应用商店-v1.0.7-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)
+![Firefox AMO](https://img.shields.io/badge/Firefox%20AMO-审核中-FF7139?style=flat-square&logo=firefoxbrowser&logoColor=white)
 ![形态](https://img.shields.io/badge/形态-浏览器扩展-007AFF?style=flat-square)
 ![计算](https://img.shields.io/badge/计算-本地运行-4CAF50?style=flat-square)
+![隐私](https://img.shields.io/badge/隐私-不上传页面正文-0D9488?style=flat-square)
+![新用户](https://img.shields.io/badge/新用户-1%20天体验%20VIP-FF9500?style=flat-square)
+
 ![能力](https://img.shields.io/badge/能力-敏感信息检测-E879F9?style=flat-square)
 ![能力](https://img.shields.io/badge/能力-API%20路径发现-3B82F6?style=flat-square)
+![能力](https://img.shields.io/badge/能力-钓鱼邮件识别-2563EB?style=flat-square)
 ![能力](https://img.shields.io/badge/能力-输入防泄漏-EC4899?style=flat-square)
 ![能力](https://img.shields.io/badge/能力-规则中心-5856D6?style=flat-square)
 ![能力](https://img.shields.io/badge/能力-报告导出-0EA5E9?style=flat-square)
+[![License](https://img.shields.io/badge/License-参见%20LICENSE-8E8E93?style=flat-square)](LICENSE)
 
 **简体中文** · [English](README-en.md)
 
-> 浏览器里的本地安全助手 —— 扫描页面风险、发现可疑路径、实时防输入泄漏，一键导出报告。
+> 浏览器里的本地安全助手 —— 扫描页面风险、识别钓鱼邮件、实时防输入泄漏，一键导出报告。
 
-**现已上线 [Chrome 应用商店](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)**（当前版本 1.0.6） · **[Firefox 应用商店](https://addons.mozilla.org/zh-CN/firefox/addon/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/)**（当前版本 1.0.3） · Firefox 版（1.0.6）已提交审核，不久上线
+**现已上线 [Chrome 应用商店](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)**（项目版本 1.0.7）· Firefox 1.0.7 版已提交审核，不久上线 · Firefox 1.0.3 版已上线
 
 ## 它是什么
 
-Hx0 数据卫士是由Hx0战队开发的一款运行在浏览器中的**本地**敏感信息辅助检测扩展。您在日常浏览网页时，它可以在后台帮您做两件事：
+Hx0 数据卫士是一款运行在浏览器中的**本地**安全辅助检测扩展。您在日常浏览网页和使用邮箱时，它可以在后台帮您做三件事：
+
+<img width="1672" height="941" alt="1 0 7-zh" src="https://github.com/user-attachments/assets/5e65f5b4-41c5-4b1f-b0d5-e0cd6ab90ee9" />
+
 
 - **往外看**：扫描当前页面和脚本，找出明文暴露的敏感数据与 API 接口线索
 - **往里守**：在您向 AI、表单、聊天框输入或粘贴内容时，于发送前识别敏感信息并提醒或拦截
+- **辨邮件**：完全离线分析网页邮箱、下载或手动导入的 EML，提取身份、链接、附件和投递证据，辅助识别钓鱼邮件
 
-所有扫描与检测结果默认保存在**您的电脑本地**，不上传页面正文，适合个人办公防护、安全自检与报告归档。
-
-<img  alt="Hx0 数据卫士-宣传海报-zh" src="https://github.com/user-attachments/assets/800edc28-cdd6-4e56-96b9-d94d3a98e786" />
+所有扫描与检测结果默认保存在**您的电脑本地**，不上传页面或邮件正文，适合个人办公防护、安全自检与报告归档。
 
 ---
 
@@ -48,6 +55,7 @@ Hx0 数据卫士是由Hx0战队开发的一款运行在浏览器中的**本地**
 | 与 AI 对话时不小心粘贴了 Key、连接串、内部文档 | **输入防泄漏**在发送前自动识别并提醒 / 拦截，省去手工脱敏 |
 | 授权网站的前端页面里藏着明文密钥或敏感数据 | **页面敏感信息检测**一键扫描 DOM 与脚本，展示命中上下文 |
 | 外链 JS 里暴露了不该公开的 API、管理接口或内网路径 | **API 检测**提取路径资产，帮助缩小网站暴露面 |
+| 邮件仿冒组织身份、隐藏真实跳转或携带可疑附件 | **钓鱼邮件识别**离线分析网页邮件与 EML，输出风险证据、认证摘要和 IOC 分类 |
 | 扫描结果难以留存和交付修复 | **报告导出**生成 HTML / Markdown / JSON，便于汇报与跟进 |
 | 担心检测工具把页面内容上传到云端 | **本地计算为主**，扫描数据留在本机，无需注册账号 |
 
@@ -63,22 +71,6 @@ Hx0 数据卫士是由Hx0战队开发的一款运行在浏览器中的**本地**
 
 ---
 
-## v1.0.3 更新
-
-相对 1.0.2，本版主要变化如下：
-
-| 模块 | 更新内容 |
-|------|----------|
-| **页面 / JS 扫描** | 命中标注具体来源（主文档、内联脚本、外链 JS、HTML 注释等）；长文件名悬停可看完整路径；复制按钮复制**原始命中值** |
-| **规则中心** | 新增「页面注释」分类（默认开启），专扫 HTML 注释中的凭据、环境变量、TODO/FIXME 等线索 |
-| **API 探测** | 批量 HTTP 探测支持自定义**间隔**、**并发数**与**单条超时**；勾选「携带 Cookie」后请求包可预览 Cookie 头；结果可导出 JSON / Markdown / CSV |
-| **输入防泄漏** | 改进复杂 AI 站点与自定义输入框覆盖；输入停顿时右上角提醒展示**全部命中**；发送时对勾选「是否拦截」的规则居中拦截 |
-| **体验修复** | 修复 Firefox 侧栏报告导出；英文界面下粘贴/脱敏 Toast 跟随语言设置；优化 Chrome 导出时的下载权限申请 |
-
-完整说明见扩展内「设置 → 用户手册」中的 **v1.0.3 更新** 章节。
-
----
-
 ## 核心能力
 
 | 能力 | 作用 |
@@ -86,7 +78,8 @@ Hx0 数据卫士是由Hx0战队开发的一款运行在浏览器中的**本地**
 | **输入防泄漏** | 在您输入或粘贴内容、点击发送之前，自动识别手机号、密钥、Token、身份证等敏感信息，提醒或拦截，避免误发到 AI、表单、聊天框 |
 | **页面敏感信息检测** | 扫描当前网页的 DOM、脚本与注释，找出页面上明文暴露的敏感数据，并展示命中位置与上下文，便于人工复核 |
 | **API 检测** | 从页面与外链 JavaScript 中提取 API 路径、Webhook、内网地址等接口资产，发现不应出现在前端的接口线索，并可选择进一步探测验证 |
-| **规则中心** | 内置常见敏感信息规则，支持自定义、分类开关与导入导出，按团队规范灵活调整检测范围 |
+| **钓鱼邮件识别** | 完全离线分析网页邮箱、EML 下载与手动导入文件，检查身份认证、链接跳转、钓鱼框架、社会工程话术和附件结构，并输出可解释报告 |
+| **规则中心** | 内置 130 条敏感信息规则，支持自定义、分类开关与导入导出，按团队规范灵活调整检测范围 |
 | **报告导出** | 将扫描与命中结果整理为 HTML、Markdown 或 JSON 报告，方便留存、汇报或交给开发修复 |
 
 ---
@@ -99,21 +92,11 @@ Hx0 数据卫士是由Hx0战队开发的一款运行在浏览器中的**本地**
 
 自己手工脱敏也很麻烦：要逐段检查、替换、再粘贴，**费时费力，还很容易漏掉某一行**。Hx0 数据卫士的**输入防泄漏**会在您输入或粘贴后、发送前自动扫描内容：
 
-- 发现敏感信息时弹出提醒，让您确认是否继续发送
-- 可开启**强拦截**模式，直接阻止发送，降低误操作风险
+- 发现敏感信息时默认弹出**右上角提醒**，让您确认是否继续
+- 在规则中心为单条规则勾选 **「是否拦截」** 后，发送时会**居中弹窗**拦截
 - 对常用 AI 站点做了识别优化，开箱即可用；其他网页输入框同样覆盖
 
-> 开启方式：扩展弹窗打开「输入与发送监测」和「剪切板粘贴监测」，在侧栏「设置」中选择提醒或拦截力度。
-
-
-<img alt="image" src="https://github.com/user-attachments/assets/2ade8374-64d0-48ad-9e52-841a7be061f1" />
-
-<img alt="image" src="https://github.com/user-attachments/assets/3f342c80-550d-4c96-954d-84939d270f00" />
-
-<img alt="image" src="https://github.com/user-attachments/assets/81b9c173-647e-424c-bd71-7667166298c7" />
-
-<img alt="image" src="https://github.com/user-attachments/assets/2952f37e-c75b-4951-b6a2-5dc71e954b62" />
-
+> 开启方式：扩展弹窗打开「输入与发送监测」和「剪切板粘贴监测」，在侧栏「设置」中选择提醒与拦截力度（轻提醒 / 标准 / 强拦截）。**仅已启用的规则**参与检测。
 
 ---
 
@@ -130,28 +113,6 @@ Hx0 数据卫士是由Hx0战队开发的一款运行在浏览器中的**本地**
 
 这样可以在不搭建复杂工具链的情况下，**更快发现授权网站里不必要的暴露点**，帮助网站减少攻击面、降低安全风险。
 
-
-<img  alt="image" src="https://github.com/user-attachments/assets/fad1cf1e-457b-4add-872a-78ee4daed717" />
-
-
-<img  alt="image" src="https://github.com/user-attachments/assets/462825d8-2b33-4638-bea9-06ec32cbf89d" />
-
-
-<img  alt="image" src="https://github.com/user-attachments/assets/f4bfff9d-f009-4630-9901-aef574f8391a" />
-
-
-<img  alt="image" src="https://github.com/user-attachments/assets/4d4984b9-625f-4b71-9f94-4556d86f060a" />
-
-
-<img  alt="image" src="https://github.com/user-attachments/assets/743f683d-3dfb-4c43-b2c5-c818b262c811" />
-
-
-<img  alt="image" src="https://github.com/user-attachments/assets/7c6c4274-b6f6-403f-9c0c-8a5933b51145" />
-
-
-<img  alt="image" src="https://github.com/user-attachments/assets/3ac83d65-cdf2-41dc-8e22-20462e6b4394" />
-
-
 > 请仅在您拥有测试授权的系统、页面或靶场中使用扫描与探测能力；命中结果需人工复核，避免把注释诱饵或测试样例误判为真实泄漏。
 
 ---
@@ -166,13 +127,17 @@ Hx0 数据卫士是由Hx0战队开发的一款运行在浏览器中的**本地**
 
 ### 1. 下载与安装
 
-#### 方式一：Chrome 应用商店（推荐）
+#### 方式一：Chrome&Firefox 应用商店（推荐）
 
 最新版本已正式上架 Chrome 应用商店，**一键安装、自动更新**，无需手动解压或开启开发者模式。
 
 👉 **[前往 Chrome 应用商店安装 Hx0 数据卫士](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)**
 
-适用于 Chrome，以及支持安装 Chrome 扩展的浏览器（如 Edge、Brave 等）。安装完成后，将扩展图标固定到工具栏即可开始使用。
+1.0.3版本已正式上架 Firefox 应用商店，**一键安装、自动更新**，无需手动解压或开启开发者模式。
+
+👉 **[前往 Firefox 应用商店安装 Hx0 数据卫士](https://addons.mozilla.org/zh-CN/firefox/addon/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/)**
+
+适用于 Firefox 浏览器。安装完成后，将扩展图标固定到工具栏即可开始使用。
 
 #### 方式二：离线安装包（CRX / XPI）
 
@@ -227,7 +192,7 @@ Firefox 版已提交 **AMO（Firefox 附加组件商店）** 审核，**不久�
 - 打开「**输入与发送监测**」—— 总开关，覆盖任意网页输入框（登录页除外）
 - 可选打开「**剪切板粘贴监测**」—— 粘贴前进行敏感内容确认
 
-在侧栏「**设置**」中可调整提醒与拦截力度（轻提醒 / 标准 / 强拦截），并为可信站点添加白名单。弹窗内「免打扰」可让当前站点 24 小时内不再提示。
+在侧栏「**设置**」中可调整提醒与拦截力度：**轻提醒**（已启用高危）、**标准**（已启用高危+中危，默认）、**强拦截**（已启用高危+中危+低危）；三种力度默认均为右上角提醒，规则中心勾选「是否拦截」的条目在发送时居中弹窗。可为可信站点添加白名单；弹窗内「免打扰」可让当前站点 24 小时内不再提示。
 
 ### 5. 导出报告
 
@@ -270,9 +235,3 @@ Firefox 版已提交 AMO 商店审核，通过后会在 README 与 Releases 更�
 - **官方邮箱**：hx0studio@foxmail.com
 - **用户手册**：安装后在扩展内「设置 → 用户手册」查看完整说明
 - **法律与隐私**：安装后在扩展内「设置 → 用户协议与隐私政策」查看
-
----
-
-## 许可证
-
-以仓库根目录 [LICENSE](LICENSE) 为准。
