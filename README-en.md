@@ -85,40 +85,57 @@ After the trial ends, you can subscribe in the extension's "Settings" to keep us
 
 ## Typical Use Cases
 
-### Preventing accidental leaks of sensitive information when chatting with AI
+### Prevent Accidentally Sending Sensitive Information in AI Chats
 
-In daily work, many people paste log snippets, configuration files, and customer data directly into AI chat boxes like ChatGPT, ERNIE Bot, and Doubao. When things get busy, it's easy to **miss an API key, database connection string, phone number, or internal document mixed in** — and one click of "send" causes a data leak.
+In daily work, many people paste log snippets, configuration files, and customer data directly into AI chat boxes like ChatGPT, ERNIE Bot, and Doubao. When things get busy, it's easy to **miss an API key, database connection string, phone number, or internal document mixed in** — and one click on "send" causes a data leak.
 
-Manual redaction is also tedious: check section by section, replace, paste again — **time-consuming, laborious, and easy to miss a line**. Hx0 DataGuard's **input leak prevention** automatically scans content after you type or paste, before sending:
+Manual redaction is also tedious: check paragraph by paragraph, replace, paste again — **time-consuming, and it's easy to miss a line**. Hx0 DataGuard's **Input Leakage Prevention** automatically scans content after you type or paste, before you send:
 
 - When sensitive information is found, a **top-right reminder** pops up by default, letting you confirm whether to continue
-- After checking **"Block"** for a rule in the Rule Center, a **centered modal** intercepts the send
-- Recognition is optimized for popular AI sites, ready to use out of the box; input boxes on other web pages are covered as well
+- After checking **"Block"** for a specific rule in the Rule Center, a **centered dialog** will intercept the send action
+- Recognition is optimized for popular AI sites and works out of the box; input fields on other websites are covered too
 
-> To enable: turn on "Input & send monitoring" and "Clipboard paste monitoring" in the extension popup, and choose the reminder & blocking strength (Light / Standard / Strict) in the sidebar "Settings". **Only enabled rules** participate in detection.
-
----
-
-### Auditing sensitive information and API exposure on authorized websites during security testing
-
-For security testers, frontend pages and external scripts often hide **information that should not be public**: debug endpoints, admin panel paths, hardcoded tokens, test accounts, or API addresses that should never appear on the browser side. All of these expand the site's attack surface and increase the risk of exploitation.
-
-Within your **authorized** testing scope, Hx0 DataGuard helps you quickly complete a round of exposure auditing right in the browser:
-
-1. Open the target page and click "Scan current page for sensitive info and APIs"
-2. Review **page sensitive data** hits in the sidebar — e.g., plaintext keys, phone numbers, ID numbers
-3. In **API detection**, review the path assets extracted from scripts — e.g., endpoints to be tested such as `/api/admin/` and `/internal/debug`
-4. After review, export a report as fix recommendations for developers or the client
-
-This way, without building a complex toolchain, you can **find unnecessary exposure points on authorized websites faster**, helping sites reduce their attack surface and lower security risk.
-
-> Only use scanning and probing capabilities on systems, pages, or cyber ranges where you have testing authorization; hits require manual review to avoid mistaking comment decoys or test samples for real leaks.
+> How to enable: turn on "Input & Send Monitoring" and "Clipboard Paste Monitoring" in the extension popup, and choose the reminder/interception strength in the sidebar "Settings" (Light Reminder / Standard / Strong Interception). **Only enabled rules** participate in detection.
 
 ---
 
-### Quickly checking pages for "leaked" data during development and debugging
+### Auditing Sensitive Information and API Exposure on Authorized Websites During Security Testing
 
-Before launch or during joint debugging, developers and QA engineers can use page scanning for a quick look: has the current page or its referenced scripts accidentally left behind test keys, intranet addresses, or real user data? Finding and fixing issues early is far easier than firefighting after they are scanned in production.
+For security testers, front-end pages and external scripts often hide **information that should not be public**: debug endpoints, admin panel paths, hardcoded tokens, test accounts, or API addresses that should never appear on the browser side. All of these expand the website's attack surface and increase the risk of exploitation.
+
+Within an **authorized** testing scope, Hx0 DataGuard helps you quickly complete an exposure surface review right in the browser:
+
+1. Open the target page and click "Scan current page for sensitive information and APIs"
+2. Review **Page Sensitive Information** hits in the sidebar — e.g., plaintext keys, phone numbers, ID numbers
+3. Check the path assets extracted from scripts in **API Detection** — e.g., endpoints like `/api/admin/` or `/internal/debug` awaiting testing
+4. After review, export a report as remediation recommendations for developers or the client
+
+This lets you **find unnecessary exposure points on authorized websites faster** without building a complex toolchain, helping websites reduce their attack surface and lower security risks.
+
+> Please use scanning and probing capabilities only on systems, pages, or lab environments where you have testing authorization. Hit results require manual review — avoid mistaking comment decoys or test samples for real leaks.
+
+---
+
+### Identifying Phishing Emails Offline on the Intranet When Receiving Suspicious Mail
+
+High-fidelity phishing emails are increasingly hard to judge by appearance alone: normal formatting, convincing wording, and spoofed domains make them nearly indistinguishable from legitimate emails — while the real jump targets behind displayed links, hidden tracking pixels, and the delivery fingerprints of phishing frameworks are nearly impossible to spot with the naked eye. Meanwhile, intranet environments may not allow handing email content over to cloud AI or online reputation services.
+
+After opening an email in a supported webmail service (Gmail, Outlook, QQ Mail, NetEase Mail, enterprise mail, etc.), Hx0 DataGuard automatically extracts the subject, sender, body links, and attachment names locally, providing explainable risk evidence. If the mailbox supports EML export, EML analysis is recommended first, as it also reads full email headers, authentication summaries, the delivery chain, and MIME/attachment structures — typically more complete than analyzing only the visible web content.
+
+- Webmail: with "Phishing Email Identification" enabled, analysis runs automatically; you can also click "Analyze Current Email"
+- EML download: when a `.eml` download is detected, choose "Download Only" or "Analyze & Download"
+- Manual import: select a local EML file in the sidebar's "Phishing Email Identification" page, up to 5 MiB per file
+- Report: review the 0–100 risk score, item-by-item evidence, authentication matrix, IOC classification, and handling recommendations — exportable to Markdown / HTML / JSON
+
+The analysis engine uses built-in offline rules. It does not call cloud AI or external reputation services, does not execute attachments, and email content, headers, and analysis reports are processed and stored only locally in the browser.
+
+> The **0–100 score is a risk score, not a probability of malice**. Offline rules cannot confirm domain/IP reputation or all authentication results in real time, nor can they determine whether a phishing framework belongs to an authorized drill. Please verify manually using the report evidence and official channels. Webmail analysis is limited by page structure and cannot guarantee full header retrieval; EML download analysis may require the browser to re-read the same file from the original mail site using the current login state.
+
+---
+
+### Quick Checks for "Leaked" Data During Development and Joint Debugging
+
+Before going live or during joint debugging, developers and testers can run a quick page scan: is there any test key, intranet address, or real user data accidentally left in the current page or its referenced scripts? Fixing problems promptly after discovery is far easier than firefighting after someone else scans them post-launch.
 
 ---
 
