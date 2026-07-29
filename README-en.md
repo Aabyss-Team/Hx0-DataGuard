@@ -1,270 +1,236 @@
 # Hx0 DataGuard
 
-[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-v1.0.6-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)
-![Firefox AMO](https://img.shields.io/badge/Firefox%20AMO-1.0.6-FF7139?style=flat-square&logo=firefoxbrowser&logoColor=white)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-v1.0.7-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)
+![Firefox AMO](https://img.shields.io/badge/Firefox%20AMO-Under%20Review-FF7139?style=flat-square&logo=firefoxbrowser&logoColor=white)
 ![Form](https://img.shields.io/badge/Form-Browser%20Extension-007AFF?style=flat-square)
-![Compute](https://img.shields.io/badge/Compute-Local%20First-4CAF50?style=flat-square)
-![Capability](https://img.shields.io/badge/Capability-Sensitive%20Data%20Scan-E879F9?style=flat-square)
-![Capability](https://img.shields.io/badge/Capability-API%20Path%20Discovery-3B82F6?style=flat-square)
-![Capability](https://img.shields.io/badge/Capability-Input%20Leak%20Guard-EC4899?style=flat-square)
-![Capability](https://img.shields.io/badge/Capability-Rule%20Center-5856D6?style=flat-square)
-![Capability](https://img.shields.io/badge/Capability-Report%20Export-0EA5E9?style=flat-square)
+![Computation](https://img.shields.io/badge/Computation-Local%20Processing-4CAF50?style=flat-square)
+![Privacy](https://img.shields.io/badge/Privacy-No%20Page%20Content%20Upload-0D9488?style=flat-square)
+![New Users](https://img.shields.io/badge/New%20Users-1--Day%20Trial%20VIP-FF9500?style=flat-square)
+![Feature](https://img.shields.io/badge/Feature-Sensitive%20Data%20Detection-E879F9?style=flat-square)
+![Feature](https://img.shields.io/badge/Feature-API%20Path%20Discovery-3B82F6?style=flat-square)
+![Feature](https://img.shields.io/badge/Feature-Phishing%20Email%20Detection-2563EB?style=flat-square)
+![Feature](https://img.shields.io/badge/Feature-Input%20Leak%20Prevention-EC4899?style=flat-square)
+![Feature](https://img.shields.io/badge/Feature-Rule%20Center-5856D6?style=flat-square)
+![Feature](https://img.shields.io/badge/Feature-Report%20Export-0EA5E9?style=flat-square)
+[![License](https://img.shields.io/badge/License-See%20LICENSE-8E8E93?style=flat-square)](LICENSE)
 
-**English** · [简体中文](README.md)
+[简体中文](README.md) · **English**
 
-> Your local security assistant in the browser — scan page risks, discover suspicious paths, guard against input leaks, and export reports in one click.
+> A local security assistant in your browser — scan pages for risks, identify phishing emails, prevent input leaks in real time, and export reports with one click.
 
-**Now available on [Chrome Web Store](https://chromewebstore.google.com/detail/hx0-数据卫士/hkhjbfajliglkonhfpkfkkdcdobikfig)(v1.0.6)** · **[Firefox Add‑ons](https://addons.mozilla.org/zh-CN/firefox/addon/hx0-数据卫士/)(v1.0.3)** · Firefox version (v1.0.6) submitted for review — coming soon
+**Now available on the [Chrome Web Store](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)** (project version 1.0.7) · Firefox v1.0.7 submitted for review, launching soon · Firefox v1.0.3 now available
 
 ## What It Is
 
-Hx0 Data Guardian​ is a **local** sensitive data assistant detection extension developed by **Hx0 Team** that runs within your browser. During your daily web browsing, it works quietly in the background to do two things for you:
+Hx0 DataGuard is a **local** security assistant extension that runs in your browser. As you browse the web and use your mailbox every day, it quietly does three things for you in the background:
 
-- **Look outward**: scan the current page and its scripts for exposed secrets and API-style endpoint clues
-- **Guard inward**: detect sensitive content in what you type or paste into AI chats, forms, and messaging boxes — **before you send**
+<img width="1672" height="941" alt="1 0 7-en" src="https://github.com/user-attachments/assets/dc64b230-b3fc-4fc9-a42f-32eed6389ec2" />
 
-Scan results stay on **your device** by default — page content is not uploaded — making it suitable for everyday protection, security self-checks, and report archival.
 
-<img width="1672"  alt="Hx0 数据卫士-宣传海报-en" src="https://github.com/user-attachments/assets/742e90dd-e986-477a-9f3c-6247524103e7" />
+- **Looks outward**: scans the current page and its scripts to find sensitive data exposed in plaintext and clues about API endpoints
+- **Guards inward**: as you type or paste into AI chats, forms, and chat boxes, it detects sensitive information before sending, then reminds or blocks
+- **Vets emails**: fully offline analysis of webmail, downloaded or manually imported EML files — extracting identity, links, attachments, and delivery evidence to help identify phishing emails
 
----
-
-## Why We Built It
-
-We kept seeing two problems get worse:
-
-**First, AI workflows make accidental leaks easier.** More people paste logs, configs, and customer data straight into ChatGPT, Claude, or similar tools. Once sent, it’s often irreversible; manual redaction is slow and easy to get wrong.
-
-**Second, front-end exposure review is still fragmented.** During authorized security testing, teams jump between tools to find hard-coded keys, debug endpoints, and API paths that shouldn’t live in the browser. For developers and site owners, undetected issues keep widening the attack surface.
-
-Enterprise DLP is heavy and expensive; manual checking doesn’t scale. Hx0 DataGuard fills that gap — **page exposure scanning and input leak protection, inside the browser, local by default, ready when you need it.**
+All scan and detection results are stored **locally on your computer** by default. Page content and email bodies are never uploaded, making it suitable for personal office protection, security self-checks, and report archiving.
 
 ---
 
-## Problems It Solves
+## Background
 
-| Pain point | How Hx0 DataGuard helps |
-|------------|-------------------------|
-| Pasting keys, connection strings, or internal docs into AI chats by mistake | **Input leak guard** detects and warns or blocks **before send** — no tedious manual redaction |
-| Plaintext secrets hiding in authorized site front-ends | **Page sensitive-data scan** inspects DOM and scripts with hit context |
-| API paths, admin routes, or internal URLs exposed in external JavaScript | **API detection** surfaces path assets to shrink unnecessary exposure |
-| Hard to keep or hand off scan results | **Report export** to HTML, Markdown, or JSON for tracking and remediation |
-| Worry that detection tools upload page content to the cloud | **Local-first** — data stays on your machine; no account sign-up required |
+We have noticed two increasingly common problems:
 
-> **Disclaimer**: Outputs are for **assistance only**. They do **not** replace formal penetration testing, secure code review, or compliance verdicts.
+**First, AI-assisted work makes "accidentally sending sensitive information" much easier.** More and more people paste logs, configurations, and customer data directly into chat boxes like ChatGPT, ERNIE Bot, and Doubao. Once sent, the content often cannot be recalled; manually redacting it section by section is both slow and error-prone.
+
+**Second, auditing the frontend exposure surface is still fragmented.** When security testers run self-checks on authorized websites, they often have to switch between multiple tools just to find hardcoded keys, debug endpoints, and API paths that should never appear on the browser side. For developers and site operators, every day these issues go undiscovered, the attack surface keeps growing.
+
+Enterprise-grade DLP solutions on the market are heavy to deploy and expensive, while purely manual checks cannot keep up with the daily pace. Hx0 DataGuard is built to fill this gap — **putting "page exposure detection" and "input leak prevention" right inside the browser: ready out of the box, running locally, check anytime.**
 
 ---
 
-## New User Offer
+## What Problems It Solves
 
-**Get a free 1-day VIP trial** on first install — full access to every feature, no account registration required.
+| Pain point | How Hx0 DataGuard handles it |
+|------|-------------------|
+| Accidentally pasting keys, connection strings, or internal documents into AI chats | **Input leak prevention** automatically detects and reminds/blocks before sending — no manual redaction needed |
+| Plaintext keys or sensitive data hidden in the frontend pages of authorized websites | **Page sensitive data detection** scans the DOM and scripts with one click, showing match context |
+| External JS exposing APIs, admin endpoints, or intranet paths that should not be public | **API detection** extracts path assets to help shrink the site's exposure surface |
+| Emails spoofing organizational identity, hiding real redirects, or carrying suspicious attachments | **Phishing email detection** analyzes webmail and EML files offline, outputting risk evidence, authentication summaries, and IOC classification |
+| Scan results hard to retain and hand over for fixing | **Report export** generates HTML / Markdown / JSON for reporting and follow-up |
+| Worry that detection tools upload page content to the cloud | **Local-first computation** — scan data stays on your machine, no account registration required |
 
-After the trial, subscribe from **Settings** in the extension to continue. **Back up your User ID immediately** — in our no-registration model, it is the only credential for recovering your membership.
-
----
-
-## What’s New in v1.0.3
-
-Highlights since v1.0.2:
-
-| Area | Changes |
-|------|---------|
-| **Page / JS scan** | Hits show exact source (main document, inline script, external JS, HTML comment, etc.); hover long filenames for full paths; copy uses the **raw matched value** |
-| **Rule center** | New **Page comments** category (on by default) scans HTML comments for credentials, env vars, TODO/FIXME markers, and similar clues |
-| **API probing** | Batch HTTP probes support custom **interval**, **concurrency**, and **per-request timeout**; with “Include cookies”, request previews show the Cookie header; export to JSON / Markdown / CSV |
-| **Input leak guard** | Better coverage on complex AI sites and custom inputs; top-right toast lists **all hits** while typing; center block dialog on send for rules marked “Block on hit” |
-| **Fixes** | Firefox side-panel report export; paste/mask toasts follow English UI; smoother Chrome download permission on export |
-
-See **Settings → User manual → v1.0.3 Updates** in the extension for full details.
+> **Note**: The output of this tool is for auxiliary assessment and security self-checks only. It **cannot replace** formal penetration testing, code audits, or compliance conclusions.
 
 ---
 
-## Core Capabilities
+## New User Benefits
 
-| Capability | What it does |
-|------------|--------------|
-| **Input leak guard** | Detects phone numbers, keys, tokens, ID numbers, and similar data **before you send** — while typing or pasting into AI chats, forms, or messaging boxes — then warns or blocks |
-| **Page sensitive-data scan** | Scans the current page DOM, scripts, and comments for exposed sensitive patterns, with hit context for manual review |
-| **API detection** | Extracts API paths, webhooks, internal URLs, and other endpoint clues from pages and external JavaScript; optional probing to verify |
-| **Rule center** | Built-in rules plus custom rules, categories, and import/export — tune detection to your team’s standards |
-| **Report export** | Export findings as HTML, Markdown, or JSON for archival, handoff, or remediation tracking |
+**Get a 1-day trial VIP membership on first install**, with all features fully unlocked — no account registration required.
+
+After the trial ends, you can subscribe in the extension's "Settings" to keep using it. Before subscribing, **back up your User ID immediately** — in the no-registration model, it is the only credential for recovering your membership benefits.
+
+---
+
+## Core Features
+
+| Feature | What it does |
+|------|------|
+| **Input leak prevention** | Before you type or paste content and hit send, it automatically detects phone numbers, keys, tokens, ID numbers, and other sensitive information — reminding or blocking to prevent accidental sends to AI chats, forms, and chat boxes |
+| **Page sensitive data detection** | Scans the current page's DOM, scripts, and comments to find sensitive data exposed in plaintext, showing match locations and context for manual review |
+| **API detection** | Extracts API paths, webhooks, intranet addresses, and other endpoint assets from pages and external JavaScript, uncovering endpoint clues that should not appear in the frontend, with optional further probing and verification |
+| **Phishing email detection** | Fully offline analysis of webmail, EML downloads, and manually imported files — checking identity authentication, link redirects, phishing frameworks, social engineering language, and attachment structure, with an explainable report |
+| **Rule center** | 130 built-in sensitive data rules, with customization, category toggles, and import/export — flexibly adjust the detection scope to your team's standards |
+| **Report export** | Organize scan and match results into HTML, Markdown, or JSON reports for retention, reporting, or handing to developers for fixing |
 
 ---
 
 ## Typical Use Cases
 
-### Chatting with AI without accidentally leaking sensitive data
+### Preventing accidental leaks of sensitive information when chatting with AI
 
-It’s easy to paste a log snippet, config file, or customer note into ChatGPT, Claude, or other AI tools without noticing an **API key, DB connection string, phone number, or internal document** mixed in — one click and it’s sent.
+In daily work, many people paste log snippets, configuration files, and customer data directly into AI chat boxes like ChatGPT, ERNIE Bot, and Doubao. When things get busy, it's easy to **miss an API key, database connection string, phone number, or internal document mixed in** — and one click of "send" causes a data leak.
 
-Manual redaction is slow and error-prone: scan line by line, replace, paste again, and still miss something. **Input leak guard** scans what you type or paste **before send**:
+Manual redaction is also tedious: check section by section, replace, paste again — **time-consuming, laborious, and easy to miss a line**. Hx0 DataGuard's **input leak prevention** automatically scans content after you type or paste, before sending:
 
-- Alerts you when sensitive patterns are found so you can confirm or cancel
-- **Strict mode** can block send entirely to reduce mistakes
-- Works out of the box on popular AI sites; other web inputs are covered too
+- When sensitive information is found, a **top-right reminder** pops up by default, letting you confirm whether to continue
+- After checking **"Block"** for a rule in the Rule Center, a **centered modal** intercepts the send
+- Recognition is optimized for popular AI sites, ready to use out of the box; input boxes on other web pages are covered as well
 
-> Enable in the popup: **Input & send monitoring** and **Clipboard paste monitoring**; set strength in side panel **Settings**.
-
-<img width="1956" height="1086" alt="image" src="https://github.com/user-attachments/assets/d2e3214a-9af6-4f8d-95f6-93e732e67ecd" />
-
-<img width="1956" height="1086" alt="image" src="https://github.com/user-attachments/assets/471e46c3-7ca5-4ae9-9988-8483d229cac4" />
-
-<img width="1956" height="1086" alt="image" src="https://github.com/user-attachments/assets/266f9deb-9c16-4fb6-b2e3-61429da5e8e4" />
-
-<img width="1950" height="390" alt="image" src="https://github.com/user-attachments/assets/67e52ea5-5b4b-4d5f-99c7-52d89c9c8c30" />
+> To enable: turn on "Input & send monitoring" and "Clipboard paste monitoring" in the extension popup, and choose the reminder & blocking strength (Light / Standard / Strict) in the sidebar "Settings". **Only enabled rules** participate in detection.
 
 ---
 
-### Security testing: find exposed secrets and API surface on authorized sites
+### Auditing sensitive information and API exposure on authorized websites during security testing
 
-Front-end pages and external scripts often hide **things that shouldn’t be public**: debug endpoints, admin paths, hard-coded tokens, test accounts, or API URLs that belong on the server, not in the browser. Each one widens the attack surface.
+For security testers, frontend pages and external scripts often hide **information that should not be public**: debug endpoints, admin panel paths, hardcoded tokens, test accounts, or API addresses that should never appear on the browser side. All of these expand the site's attack surface and increase the risk of exploitation.
 
-Within **properly authorized** test scope, Hx0 DataGuard helps you map exposure quickly in the browser:
+Within your **authorized** testing scope, Hx0 DataGuard helps you quickly complete a round of exposure auditing right in the browser:
 
-1. Open the target page and run **Scan current page for sensitive info & APIs**
-2. Review **Page risks** — plaintext keys, phone numbers, ID numbers, etc.
-3. Review **API detection** — paths like `/api/admin/`, `/internal/debug`, and similar assets pulled from scripts
-4. Export a report for developers or the site owner to fix
+1. Open the target page and click "Scan current page for sensitive info and APIs"
+2. Review **page sensitive data** hits in the sidebar — e.g., plaintext keys, phone numbers, ID numbers
+3. In **API detection**, review the path assets extracted from scripts — e.g., endpoints to be tested such as `/api/admin/` and `/internal/debug`
+4. After review, export a report as fix recommendations for developers or the client
 
-You get faster visibility into **unnecessary exposure** without standing up a heavy toolchain — helping sites shrink their attack surface and lower risk.
+This way, without building a complex toolchain, you can **find unnecessary exposure points on authorized websites faster**, helping sites reduce their attack surface and lower security risk.
 
-<img  alt="image" src="https://github.com/user-attachments/assets/a6220189-9006-4a50-8b5e-e54965f2d03c" />
-
-<img  alt="image" src="https://github.com/user-attachments/assets/1f4eb669-83ca-45c8-9cee-03373a88a03a" />
-
-<img  alt="image" src="https://github.com/user-attachments/assets/c9269202-bb67-40f3-8167-bcce0eb46b17" />
-
-<img  alt="image" src="https://github.com/user-attachments/assets/d878ffe5-b1a3-44c7-b035-22c05df8a5be" />
-
-<img  alt="image" src="https://github.com/user-attachments/assets/4bcef54c-37b7-4fb5-a5a7-4cb02b8702f8" />
-
-<img  alt="image" src="https://github.com/user-attachments/assets/27c25e7a-f707-482e-a807-ad06f6833258" />
-
-<img  alt="image" src="https://github.com/user-attachments/assets/da29d29a-b2cc-4c21-b610-408d5a7748ee" />
-
-
-> Use scanning and probing only on systems you are authorized to test. Always manually verify hits; comments, decoys, and test fixtures can look like real leaks.
+> Only use scanning and probing capabilities on systems, pages, or cyber ranges where you have testing authorization; hits require manual review to avoid mistaking comment decoys or test samples for real leaks.
 
 ---
 
-### Dev & QA: quick check before release
+### Quickly checking pages for "leaked" data during development and debugging
 
-Before shipping or during integration, developers and QA can scan a page to see if test keys, internal URLs, or real user data accidentally made it into the DOM or linked scripts — and fix issues before they go live.
+Before launch or during joint debugging, developers and QA engineers can use page scanning for a quick look: has the current page or its referenced scripts accidentally left behind test keys, intranet addresses, or real user data? Finding and fixing issues early is far easier than firefighting after they are scanned in production.
 
 ---
 
 ## Quick Start
 
-### 1. Download & Install
+### 1. Download & Installation
 
-#### Option A: Chrome Web Store (recommended)
+#### Option 1: Chrome & Firefox Add-on Stores (Recommended)
 
-The latest release is live on the Chrome Web Store — **one-click install with automatic updates**, no manual unzip or developer mode required.
+The latest version is officially available on the Chrome Web Store — **one-click install with automatic updates**, no manual extraction or developer mode required.
 
 👉 **[Install Hx0 DataGuard from the Chrome Web Store](https://chromewebstore.google.com/detail/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/hkhjbfajliglkonhfpkfkkdcdobikfig)**
 
-Works on Chrome and other Chromium browsers that support Chrome extensions (e.g. Edge, Brave). Pin the icon to your toolbar after install.
+Version 1.0.3 is officially available on Firefox Add-ons — **one-click install with automatic updates**, no manual extraction or developer mode required.
 
-#### Option B: Offline package (CRX / XPI)
+👉 **[Install Hx0 DataGuard from Firefox Add-ons](https://addons.mozilla.org/zh-CN/firefox/addon/hx0-%E6%95%B0%E6%8D%AE%E5%8D%AB%E5%A3%AB/)**
 
-If you **cannot access the stores** (e.g. restricted network), download the offline installer from [Releases](../../releases):
+For the Firefox browser. After installation, pin the extension icon to the toolbar to get started.
+
+#### Option 2: Offline Installer Packages (CRX / XPI)
+
+If you **cannot access the add-on stores** (e.g., in network-restricted environments), download the offline installer from the [Releases](../../releases) page of this repository:
 
 | Browser | Package |
-|---------|---------|
+|--------|--------|
 | Chrome / Edge / Brave, etc. | `Hx0-DataGuard-chrome-*.crx` |
 | Firefox | `Hx0-DataGuard-firefox-*.xpi` |
 
-**Chrome / Edge / Brave (`.crx`)**
+**Chrome / Edge / Brave, etc. (`.crx`)**
 
-1. Download **`Hx0-DataGuard-chrome-*.crx`**
-2. Open extension management (`chrome://extensions`, `edge://extensions`, or `brave://extensions`)
-3. Enable **Developer mode** (top-right)
-4. **Drag** the `.crx` file onto the extensions page
-5. Click **Add extension** in the confirmation dialog
+1. Download **`Hx0-DataGuard-chrome-*.crx`** to your local machine
+2. Open the extensions management page (Chrome: `chrome://extensions`, Edge: `edge://extensions`, Brave: `brave://extensions`)
+3. Enable **"Developer mode"** in the top-right corner
+4. **Drag** the `.crx` file into the extensions management page
+5. Click **"Add extension"** in the popup to complete the installation
 
 **Firefox (`.xpi`)**
 
-1. Download **`Hx0-DataGuard-firefox-*.xpi`**
-2. Open `about:addons` in Firefox
-3. Click the **gear icon** → **Install Add-on From File…**
-4. Select the downloaded `.xpi` and confirm
+1. Download **`Hx0-DataGuard-firefox-*.xpi`** to your local machine
+2. Open Firefox and enter `about:addons` in the address bar to open the Add-ons Manager
+3. Click the **gear icon** in the top-right corner → **"Install Add-on From File…"**
+4. Select the downloaded `.xpi` file and confirm the installation as prompted
 
-> You can also drag the `.xpi` into a Firefox window to install.  
-> Offline installs do not auto-update. Download a new Release when updates ship, or switch to the store build.
+> You can also drag the `.xpi` file directly into the Firefox window to trigger installation.  
+> Offline installations do not auto-update; when a new version is released, please re-download the package from Releases, or switch to the store version.
 
-#### Firefox
+#### Firefox Version
 
-The Firefox build has been submitted to **AMO (Firefox Add-ons)** and will be **available soon**. A store link will be posted here and in [Releases](../../releases) once approved; until then, install the **`.xpi`** from Releases for offline use.
+The Firefox version has been submitted to **AMO (Firefox Add-ons)** for review and **will be available soon**. Once approved, the store link will be updated in this README and in [Releases](../../releases); in the meantime, you can try it via the **`.xpi`** offline installer from Releases.
 
-> Pin the extension icon to your toolbar for daily use.
+> After installation, pin the extension icon to the toolbar for daily use.
 
 ### 2. First Launch
 
-1. Click the toolbar icon and accept the Terms & Privacy Policy
-2. If a **User ID** is shown, copy and save it right away
-3. New users automatically receive a **1-day VIP trial** with full access
+1. Click the toolbar icon, then read and agree to the User Agreement & Privacy Policy
+2. If the interface shows a **User ID**, copy and save it immediately
+3. New users automatically receive a **1-day trial VIP** with full access to all features
 
 ### 3. Scan the Current Page
 
-1. Open the page you want to inspect
-2. Click the extension icon and confirm the host
-3. Click **Scan current page for sensitive info & APIs**
-4. Open the **side panel** and review results under Dashboard, Page risks, API detection, etc.
+1. Open the web page you want to check
+2. Click the extension icon and confirm the current site is correct
+3. Click "Scan current page for sensitive info and APIs"
+4. Open the **sidebar** (via the menu next to the icon or the browser sidebar button), and view results on pages such as "Overview", "Page Sensitive Data", and "API Detection"
 
-### 4. Enable Input Leak Guard
+### 4. Enable Input Leak Prevention
 
 In the extension **popup**:
 
-- Turn on **Input & send monitoring** — master switch for text inputs (login pages excluded)
-- Optionally turn on **Clipboard paste monitoring** — confirm before pasting sensitive text
+- Turn on "**Input & send monitoring**" — the master switch, covering input boxes on any web page (except login pages)
+- Optionally turn on "**Clipboard paste monitoring**" — confirms sensitive content before pasting
 
-In the side panel **Settings**, choose alert/block strength (Light / Standard / Strict) and add trusted sites to the allowlist. **Snooze** in the popup skips the current site for 24 hours.
+In the sidebar "**Settings**", you can adjust the reminder & blocking strength: **Light** (enabled high-risk rules), **Standard** (enabled high- + medium-risk rules, default), **Strict** (enabled high- + medium- + low-risk rules). All three levels default to top-right reminders; rules with "Block" checked in the Rule Center trigger a centered modal on send. You can add trusted sites to the whitelist; "Do Not Disturb" in the popup silences the current site for 24 hours.
 
 ### 5. Export Reports
 
-After scanning, open **Reports** in the side panel and export HTML, Markdown, or JSON. Export important runs promptly for backup.
+After scanning, go to the sidebar "**Reports**" page to preview and export HTML, Markdown, or JSON. For important tasks, export and back up promptly.
 
 ---
 
 ## Membership
 
-Hx0 DataGuard is **paid software** — full features require an active VIP membership.
+Hx0 DataGuard is **paid software**; full functionality requires a VIP membership.
 
 | Item | Details |
-|------|---------|
-| New user offer | **1-day VIP trial** on first install |
-| Subscribe | Side panel or popup → **Settings** → **Subscribe** |
-| User ID | No sign-up; the User ID shown in the UI is your membership credential — **back it up** |
-| Recovery | If you lose your ID, contact support below with your old ID and payment proof |
+|------|------|
+| New user benefit | **1-day trial VIP** on first install |
+| How to subscribe | Sidebar or popup → "Settings" → "Become a member" |
+| User ID | No registration needed; the User ID shown in the interface is your membership credential — **be sure to back it up after subscribing** |
+| Benefit recovery | If your ID is lost, contact customer support via the email below, providing your old ID and payment proof |
 
 ---
 
 ## FAQ
 
 **No scan results?**  
-The page may have little scannable content; some external scripts may be skipped due to permissions or timeouts — in-page results are still kept.
+Make sure the current page actually has scannable content; some external scripts may be skipped due to permissions or timeouts, but the scan results for the page itself are kept.
 
-**Input guard not working?**  
-Ensure **Input & send monitoring** is on in the popup; check allowlist or snooze for the current site.
+**Input leak prevention not working?**  
+Check whether "Input & send monitoring" is enabled in the popup, and whether the current site is on the whitelist or in Do Not Disturb.
 
-**Lost membership after reinstall?**  
-Contact support with your backed-up User ID; recovery may not be possible without the old ID.
+**Can't recover membership after reinstalling?**  
+Contact customer support with the User ID you backed up at installation; recovery may not be possible if you cannot provide the old ID.
 
-**When will Firefox be available?**  
-The Firefox add-on is under AMO review. A store link will be added to this README and Releases once approved.
+**When will the Firefox version be available?**  
+The Firefox version has been submitted to the AMO store for review; links will be updated in this README and in Releases once approved. Please wait patiently for the official release.
 
 ---
 
 ## Feedback & Support
 
-- **Issues**: [Open an Issue](../../issues)
-- **Email**: hx0studio@foxmail.com
-- **User manual**: **Settings → User manual** inside the extension
-- **Legal & privacy**: **Settings → Terms & Privacy Policy** inside the extension
-
----
-
-## License
-
-See [LICENSE](LICENSE) at the repository root.
-
+- **Issue reports**: [Submit an Issue](../../issues)
+- **Official email**: hx0studio@foxmail.com
+- **User manual**: after installation, see "Settings → User Manual" in the extension for full documentation
+- **Legal & privacy**: after installation, see "Settings → User Agreement & Privacy Policy" in the extension
